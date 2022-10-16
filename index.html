@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tugas pweb p05 tabel dengan aksi </title>
+    <link rel="stylesheet" type="text/css" href="p05.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+    <h1>5 best friends</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        td{
+            background: navajowhite;
+            cursor: pointer;
+            transition : .3s;
+        }
+
+        td: hover{
+            background: white;
+        
+        }
+        .Tabelsaya {
+            width: 100%;
+            max-width: 500px;
+        }
+    </style>
+
+<table id= "Tabelsaya">
+    <tr>
+        <td>No</td>
+        <td>Nama</td>
+        <td>Alamat</td>
+        <td>Hapus</td>
+    </tr>
+    <tr id="LINE1">
+        <td>1</td>
+        <td class="nm_tmn">Anisa</td>
+        <td>Cirebon</td>
+        <td class="delete" id="delete__1">Hapus</td>
+    </tr>
+    <tr id="LINE2">
+        <td>2</td>
+        <td class="nm_tmn">Fanny</td>
+        <td>Cirebon</td>
+        <td class="delete" id ="delete__2">Hapus</td>
+    </tr>
+    <tr id="LINE3">
+        <td>3</td>
+        <td class="nm_tmn">Tika</td>
+        <td>Cirebon</td>
+        <td class="delete" id="delete__3">Hapus</td>
+    </tr>
+    <tr id="LINE4">
+        <td>4</td>
+        <td class="nm_tmn">Hanifah</td>
+        <td>Cirebon</td>
+        <td class="delete" id="delete__4">Hapus</td>
+    </tr>
+    <tr id="LINE5">
+        <td>5</td>
+        <td class="nm_tmn">Sebastian</td>
+        <td>Cirebon</td>
+        <td class="delete" id="delete__5">Hapus</td>
+    </tr>
+
+
+</table>
+<script>
+  $(document).ready(function(){
+    //alert(0)
+    $('.nm_tmn').click(function(){
+        //alert(1)
+        let volume = $(this).text();
+        //alert(volume);
+
+        let volume2 = prompt('mau diubah?', volume);
+        if(!volume2)return;
+
+        //alert(volume2);
+
+        $(this).text(volume2);
+    })
+
+  
+  
+  
+    $('.delete').click(function(){
+    //alert (1)
+
+
+   let yakin = confirm('yakin mau hapus?');
+   if(!yakin) return;
+
+   let id = $(this).prop('id');
+   //alert(id);
+   
+   let rid = id.split('__');
+   let baris_ke = rid[1];
+   //alert(baris_ke);
+
+   $('#LINE'+baris_ke).slideUp()
+
+   //alert('anda yakin')
+
+})
+  })  
+</script>
